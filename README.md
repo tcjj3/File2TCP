@@ -30,10 +30,12 @@ The engineering conclusion for this receive path was simple: the decoder needed 
 necessary to distinguish whether packet loss, packet reordering, or both were the immediate
 cause; the UDP path was the failing transport boundary while file input was the working one.
 
-A separate GK-2A/GNU Radio experiment in 2021 had shown a similar transport-level pattern:
-native SDR access and an `RSP_TCP` path worked, while the tested UDP-coupled path did not.
-That result provided an earlier practical precedent for using a TCP stream boundary in a
-satellite receiving chain.
+A separate GK-2A/GNU Radio experiment in 2021 had already shown the same transport-level
+pattern in another satellite receiving chain: native SDR access worked, an `RSP_TCP` path
+worked, and the tested UDP-coupled path failed. The public test record is preserved
+[here](https://x.com/tcjj3/status/1379363831105744900). For that engineering decision it was
+not necessary to prove whether packet loss, packet reordering, or both were the immediate
+mechanism; the UDP transport semantics were the critical variable isolated by the comparison.
 
 ## Intended architecture
 
