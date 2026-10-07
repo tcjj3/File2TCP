@@ -1,0 +1,3 @@
+file2tcp
+*.o
+__pycache__/
